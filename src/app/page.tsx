@@ -1,6 +1,6 @@
-import { OAuth } from "@/components/OAuth";
+
 import { Card, CardBody, CardHeader } from "@nextui-org/card";
-import Image from "next/image";
+import { SignInWithGithub } from '../components/SignInWithGithub';
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
         Test
       </CardHeader>
       <CardBody>
-        <OAuth />
+        <SignInWithGithub />
       </CardBody>
     </Card>
   );
