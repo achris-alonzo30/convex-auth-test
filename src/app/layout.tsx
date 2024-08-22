@@ -4,6 +4,7 @@ import { Fira_Sans_Condensed } from "next/font/google";
 
 import { ConvexClientProvider } from "@/providers/ConvexClientProvider";
 import { ConvexAuthNextjsServerProvider } from "@convex-dev/auth/nextjs/server";
+import { NextUIProvider } from "@nextui-org/react";
 
 const font = Fira_Sans_Condensed({ subsets: ["latin"], weight: "400" });
 
@@ -18,12 +19,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ConvexAuthNextjsServerProvider>
+    <ConvexAuthNextjsServerProvider >
       <html lang="en">
         <body className={`${font.className} antialiased`}>
-          <ConvexClientProvider>{children}</ConvexClientProvider>
+          <ConvexClientProvider>
+            <NextUIProvider>
+              {children}
+            </NextUIProvider>
+          </ConvexClientProvider>
         </body>
       </html>
     </ConvexAuthNextjsServerProvider>
+
   );
 }
