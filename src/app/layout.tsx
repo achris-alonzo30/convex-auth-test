@@ -1,11 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Fira_Sans_Condensed } from "next/font/google";
 
 import { ConvexClientProvider } from "@/providers/ConvexClientProvider";
 import { ConvexAuthNextjsServerProvider } from "@convex-dev/auth/nextjs/server";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Fira_Sans_Condensed({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <ConvexAuthNextjsServerProvider>
       <html lang="en">
-        <body>
+        <body className={`${font.className} antialiased`}>
           <ConvexClientProvider>{children}</ConvexClientProvider>
         </body>
       </html>
