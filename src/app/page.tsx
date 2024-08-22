@@ -1,6 +1,6 @@
 
 import { Card, CardBody, CardHeader } from "@nextui-org/card";
-import { SignInWithGithub } from '../components/SignInWithGithub';
+import { SignInWithGithub } from '../components/oauth/SignInWithGithub';
 
 export default function Home() {
   return (

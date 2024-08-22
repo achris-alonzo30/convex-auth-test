@@ -7,11 +7,14 @@ export const SignInWithGithub = () => {
     const { signIn} = useAuthActions();
     return (
         <Button 
+            size="sm"
+            radius="sm"
+            variant="light"
             className="flex items-center gap-2"
             onClick={() => void signIn("github")}
+            startContent={<FaGithub className="size-4" />}
         >
-            <FaGithub className="size-4" />
-            Sign in with GitHub
+            Sign in with Github
         </Button>
     )
 }
